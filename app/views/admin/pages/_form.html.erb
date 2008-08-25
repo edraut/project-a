@@ -1,0 +1,6 @@
+<% form_for [:admin,form] do |page| %>
+	<%= page.error_messages %>
+	<%= page.text_field :name %><br/>
+	<%= page.text_area :body %>
+	<%= page.submit 'Save' %>
+<% end %>

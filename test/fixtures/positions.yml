@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  frame: 
+  x: 1
+  y: 1
+  player: 
+  captured: false
+
+two:
+  frame: 
+  x: 1
+  y: 1
+  player: 
+  captured: false

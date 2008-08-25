@@ -1,0 +1,13 @@
+<div class="column span-4 prepend-17 first last">
+	<%= link_to 'New Game', {:action => 'new'} %>
+</div>
+<% for game in @games %>
+<div id="game_<%= game.id.to_s %>" class="column span-21 first last">
+	<div class="column span-5 prepend-5 first">
+		<%= game.opponent(session[:user_id]).user.login %>
+	</div>
+	<div class="column span-5">
+		<%= link_to 'Play', edit_game_path(game) %>
+	</div>
+</div>
+<% end %>

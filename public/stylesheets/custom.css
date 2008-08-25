@@ -1,0 +1,108 @@
+.text_right {
+	text-align: right;
+}
+a.active_nav {
+	color: #444;
+}
+a, a.inactive_nav {
+	color: darkred;
+}
+
+div.navigation {
+	margin: 5px;
+}
+.ui-tabs-hide { display: none; }
+
+div.board {
+	background: url(../images/woodgrain_board.jpg) no-repeat;
+	z-index: -1;
+}
+
+div.span-1 {
+	width: 31px;
+	margin: 0;
+}
+
+div.board-cell-middle {
+	background: url(../images/board_cell_middle.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-dot {
+	background: url(../images/board_cell_dot.png) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-top-left {
+	background: url(../images/board_cell_top_left.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-top-right {
+	background: url(../images/board_cell_top_right.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-bottom-left {
+	background: url(../images/board_cell_bottom_left.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-bottom-right {
+	background: url(../images/board_cell_bottom_right.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-bottom {
+	background: url(../images/board_cell_bottom.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-top {
+	background: url(../images/board_cell_top.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-left {
+	background: url(../images/board_cell_left.gif) no-repeat;
+	z-index: 1;
+}
+
+div.board-cell-right {
+	background: url(../images/board_cell_right.gif) no-repeat;
+	z-index: 1;
+}
+
+div.piece_image {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+div.played_marker {
+	position: relative;
+	top: -31px;
+	left: 0;
+	z-index: 3;
+}
+
+div.row-height, div.played_marker, div.piece_image {
+	height: 31px;
+	
+}
+
+div.board-span-7, div.board-span-9, div.board-span-11, div.board-span-13, div.board-span-15, div.board-span-17, div.board-span-19 {
+	float: left;
+	margin: 0 15px;
+}
+div.board-row {
+	float: left;
+	padding: 0 15px;
+}
+div.board-span-7 {	width: 247px; }
+div.board-span-9 {	width: 309px; }
+div.board-span-11 { 	width: 371px; }
+div.board-span-13 { 	width: 433px; }
+div.board-span-15 { 	width: 495px; }
+div.board-span-17 { 	width: 557px; }
+div.board-span-19 { 	width: 619px; }

@@ -1,0 +1,15 @@
+&nbsp;<br/>
+<div class="column span-3 first last nav-tab"><%= link_to '<span>Home</span>', home_path %></div>
+<div class="column span-3 first last nav-tab"><%= link_to '<span>About</span>', about_path %></div>
+<div class="column span-3 first last nav-tab"><%= link_to '<span>Play Online Now</span>', games_path %></div>
+<% unless session[:user_id] %>
+	<div class="column span-3 first last nav-tab"><%= link_to '<span>Get an Account</span>', signup_path %></div>
+<% end %>
+<% if SuperUser.all.collect{|s| s.id}.include? session[:user_id].to_i %>
+	<div class="column span-3 first last nav-tab"><%= link_to '<span>Pages</span>', admin_pages_path %></div>
+<% end %>
+<% if session[:user_id] %>
+	<div class="column span-3 first last nav-tab"><%= link_to '<span>Sign Out</span>', logout_path %></div>
+<% else %>
+	<div class="column span-3 first last nav-tab"><%= link_to '<span>Sign In</span>', login_path %></div>
+<% end %>
