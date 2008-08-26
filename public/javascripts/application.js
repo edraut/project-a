@@ -13,7 +13,7 @@ function makeMove(cell,game_id,player_tag,player_id) {
 		success: function(data) {
 			cell.children('.piece_image').html( '<img src="/images/' + player_tag + '_stone.png">');
 			$("div[played_marker]").html( '&nbsp;');
-			cell.children("div[played_marker]").html( '<img src="/images/speedy_bird_played.png">')
+			cell.children("div[played_marker]").html( '<img src="/images/played_marker.png">')
 			$("div[display_key='whose_turn']").toggle();
 			checkForMove(game_id,player_tag,player_id);
 			for (key in data) {
@@ -41,7 +41,7 @@ function checkForMove(game_id,player_tag,player_id){
 				$("div[display_key='whose_turn']").toggle();
 				cell_id = '#cell_' + data.played.col + '_' + data.played.row
 				$("div[played_marker]").html( '&nbsp;');
-				$(cell_id).children("div[played_marker]").html( '<img src="/images/speedy_bird_played.png">')
+				$(cell_id).children("div[played_marker]").html( '<img src="/images/played_marker.png">')
       	$(cell_id).children("div[piece_image]").html( '<img src="/images/' + opponentTag(player_tag) + '_stone.png">');
 				for (key in data.captured) {
 					$('#cell_' + data.captured[key].col + '_' + data.captured[key].row).html('&nbsp;');
