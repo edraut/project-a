@@ -3,9 +3,11 @@
 }
 a.active_nav {
 	color: #444;
+	text-decoration: none;
 }
-a, a.inactive_nav {
+a, a.inactive_nav, .play-online-button {
 	color: darkred;
+	text-decoration: none;
 }
 
 div.navigation {
@@ -29,7 +31,7 @@ div.board-cell-middle {
 }
 
 div.board-cell-dot {
-	background: url(../images/board_cell_dot.png) no-repeat;
+	background: url(/images/board_cell_dot.png) no-repeat;
 	z-index: 1;
 }
 
@@ -78,17 +80,19 @@ div.piece_image {
 	top: 0;
 	left: 0;
 	z-index: 2;
+	line-height: 0;
 }
 div.played_marker {
 	position: relative;
 	top: -31px;
 	left: 0;
 	z-index: 3;
+	height: 0;
+	line-height: 0;
 }
 
-div.row-height, div.played_marker, div.piece_image {
+div.row-height, div.piece_image {
 	height: 31px;
-	
 }
 
 div.board-span-7, div.board-span-9, div.board-span-11, div.board-span-13, div.board-span-15, div.board-span-17, div.board-span-19 {
@@ -106,5 +110,3 @@ div.board-span-13 { 	width: 433px; }
 div.board-span-15 { 	width: 495px; }
 div.board-span-17 { 	width: 557px; }
 div.board-span-19 { 	width: 619px; }
-
-img, div { behavior: url(iepngfix.htc) }

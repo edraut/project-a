@@ -1,7 +1,6 @@
 &nbsp;<br/>
 <div class="column span-3 first last nav-tab"><%= link_to '<span>Home</span>', home_path %></div>
 <div class="column span-3 first last nav-tab"><%= link_to '<span>About</span>', about_path %></div>
-<div class="column span-3 first last nav-tab"><%= link_to '<span>Play Online Now</span>', games_path %></div>
 <% unless session[:user_id] %>
 	<div class="column span-3 first last nav-tab"><%= link_to '<span>Get an Account</span>', signup_path %></div>
 <% end %>
@@ -12,4 +11,16 @@
 	<div class="column span-3 first last nav-tab"><%= link_to '<span>Sign Out</span>', logout_path %></div>
 <% else %>
 	<div class="column span-3 first last nav-tab"><%= link_to '<span>Sign In</span>', login_path %></div>
+<% end %>
+<div class="column span-3 first last nav-tab"><% form_tag games_path, :method => :get, :id => 'play-form' do -%>
+	<a onclick="$(this).parents('form').submit();">Play Online Now</a>
+	<% end %>
+ </div>
+<% javascript_tag do %>
+	jQuery.each(jQuery.browser, function(i, val) {
+		if(val == true && i == 'msie') {
+			$('#play-form').attr('action','/home');
+			alert('Please download Firefox or Safari to play.');
+		}
+	});
 <% end %>

@@ -4,20 +4,8 @@
 <% game.size.times do |row| %>
 	<div class="column board-row first last row-height">
 	<% game.size.times do |col| %>
-		<div id="cell_<%= [col,row].join('_') %>" go_col="<%= col %>" go_row="<%= row %>" class="column span-1  row-height <%= get_cell_image(game,row,col) %>" onClick="makeMove($(this), '<%= game.id %>', '<%= game.this_player(session[:user_id]).player_tag %>', '<%= game.this_player(session[:user_id]).id %>')">
-			<div piece_image="true" class="piece_image">&nbsp;</div>
-			<div played_marker="true" class="played_marker">&nbsp;</div>
-		</div>
-		<% javascript_tag do %>
-			$('#cell_<%= [col,row].join('_') %>').data('go_col', <%= col %>);
-			$('#cell_<%= [col,row].join('_') %>').data('go_row', <%= row %>);
-			<% if player_id = game.latest_frame.position_at_coordinates(col,row).player_id and player_id != 0%>
-				<% 	player = Player.find(player_id) %>
-				preloadPosition($('#cell_<%= [col,row].join('_') %>').children('.piece_image'),'<%= player.player_tag %>')
-			<% end %>
-		<% end %>
+		<div id="cell_<%= [col,row].join('_') %>" go_col="<%= col %>" go_row="<%= row %>" class="column span-1  row-height <%= get_cell_image(game,row,col) %>" onClick="makeMove($(this), '<%= game.id %>', '<%= game.this_player(session[:user_id]).player_tag %>', '<%= game.this_player(session[:user_id]).id %>')"><div piece_image="true" class="piece_image">&nbsp;</div><div played_marker="true" class="played_marker">&nbsp;</div></div>
 	<% end %>
-		<div class="column span-1  row-height last">&nbsp;</div>
 	</div>
 <% end %>
 </div>
@@ -27,7 +15,9 @@
 			<%= image_tag '/images/black_stone.png' %>
 		</div>
 		<div class="column span-2 prepend-1 last">
-			<div display_key="whose_turn" <% if game.next_player == game.white_player %> style="display: none"<% end %>>	&lt;-- next</div>
+			<div display_key="whose_turn" <% if game.next_player == game.white_player %> style="display: none"<% end %>>	&lt;-- next
+			</div>
+		</div>
 	</div>
 	<div class="column span-4 first last">
 		<%= game.black_player.user.login %>
@@ -46,6 +36,18 @@
 	</div>
 </div>
 </div>
+<% javascript_tag do %>
+	<% game.size.times do |row| %>
+		<% game.size.times do |col| %>
+			$('#cell_<%= [col,row].join('_') %>').data('go_col', <%= col %>);
+			$('#cell_<%= [col,row].join('_') %>').data('go_row', <%= row %>);
+			<% if player_id = game.latest_frame.position_at_coordinates(col,row).player_id and player_id != 0%>
+				<% 	player = Player.find(player_id) %>
+				preloadPosition($('#cell_<%= [col,row].join('_') %>').children('.piece_image'),'<%= player.player_tag %>')
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
 <% if game.current_player == game.this_player(session[:user_id]) %>
 <!-- <%= game.id %>,
 	<%= game.this_player(session[:user_id]).player_tag %>,
