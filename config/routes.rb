@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.home 'home', :controller => 'pages', :action => 'show', :id => 0, :name => 'home'
   map.about 'about', :controller => 'pages', :action => 'show', :id => 0, :name => 'about'
+  map.contact 'contact', :controller => 'pages', :action => 'show', :id => 0, :name => 'contact'
   
   map.resources :games
   map.resources :frames

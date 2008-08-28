@@ -1,6 +1,7 @@
 &nbsp;<br/>
 <div class="column span-3 first last nav-tab"><%= link_to '<span>Home</span>', home_path %></div>
 <div class="column span-3 first last nav-tab"><%= link_to '<span>About</span>', about_path %></div>
+<div class="column span-3 first last nav-tab"><%= link_to '<span>Contact</span>', contact_path %></div>
 <% unless session[:user_id] %>
 	<div class="column span-3 first last nav-tab"><%= link_to '<span>Get an Account</span>', signup_path %></div>
 <% end %>

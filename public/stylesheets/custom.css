@@ -1,6 +1,9 @@
 .text_right {
 	text-align: right;
 }
+.float-right {
+	float: right;
+}
 a.active_nav {
 	color: #444;
 	text-decoration: none;
