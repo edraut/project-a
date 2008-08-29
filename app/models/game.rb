@@ -106,7 +106,7 @@ class Game < ActiveRecord::Base
             return false
           end
         else
-          latest_frame.errors.each do | error |
+          latest_frame.errors.each do | attr, error |
             self.errors.add_to_base error
           end
           latest_frame.destroy

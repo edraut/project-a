@@ -72,7 +72,7 @@ class GamesController < ApplicationController
             render :text => "[{col: -1, row: -1}]", :status => 200
           end
         else
-          render :text => @game.errors.full_messages.join(' * '), :status => 403
+          render :text => @game.errors.full_messages.join(' - '), :status => 403
         end
       end
     end

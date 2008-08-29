@@ -18,7 +18,7 @@ function makeMove(cell,game_id,player_tag,player_id) {
 			checkForMove(game_id,player_tag,player_id);
 			for (key in data) {
 				if (data[key].col >= 0){
-					$('#cell_' + data[key].col + '_' + data[key].row).children('.piece_image').removeClass(player_tag + '_piece');
+					$('#cell_' + data[key].col + '_' + data[key].row).children('.piece_image').removeClass(opponentTag(player_tag) + '_piece');
 				}
 			}
 		}
@@ -48,7 +48,7 @@ function checkForMove(game_id,player_tag,player_id){
 				$(cell_id).children(".played_marker").addClass('played_marker_active');
       	$(cell_id).children(".piece_image").addClass( opponentTag(player_tag) + '_piece');
 				for (key in data.captured) {
-					$('#cell_' + data.captured[key].col + '_' + data.captured[key].row).removeClass(player_tag + '_piece');
+					$('#cell_' + data.captured[key].col + '_' + data.captured[key].row).children('.piece_image').removeClass(player_tag + '_piece');
 				}
 			}
 		}
