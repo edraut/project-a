@@ -28,16 +28,22 @@ div.span-1 {
 	margin: 0;
 }
 
+div.board-cell{
+	position: relative;
+}
 div.board-cell-middle {
 	background: url(../images/board_cell_middle.gif) no-repeat;
 	z-index: 1;
 }
 
 div.board-cell-dot {
-	background: url(/images/board_cell_dot.png) no-repeat;
 	z-index: 1;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/images/board_cell_dot.png');
 }
-
+div.board-cell-dot[class] {
+	background: url(/images/board_cell_dot.png) no-repeat;
+	background-repeat: none;
+}
 div.board-cell-top-left {
 	background: url(../images/board_cell_top_left.gif) no-repeat;
 	z-index: 1;
@@ -79,21 +85,43 @@ div.board-cell-right {
 }
 
 div.piece_image {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
+	width: 31px;
+	height: 31px;
 	z-index: 2;
-	line-height: 0;
 }
-div.played_marker {
-	position: relative;
-	top: -31px;
+div.black_player_legend, div.white_player_legend {
+	width: 31px;
+	height: 31px;
+}
+div.white_piece, div.white_player_legend {
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/images/white_stone.png');
+}
+div.white_piece[class], div.white_player_legend[class] {
+	background: url(/images/white_stone.png);
+}
+div.black_piece, div.black_player_legend {
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/images/black_stone.png');
+}
+div.black_piece[class], div.black_player_legend[class] {
+	background: url(/images/black_stone.png);
+}
+div.played_marker, div.black_piece, div.white_piece {
+	position: absolute;
 	left: 0;
+	top: 0;
+	width: 31px;
+	height: 31px;
 	z-index: 3;
-	height: 0;
-	line-height: 0;
 }
-
+div.played_marker_active {
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='/images/played_marker.png');
+}
+div.played_marker_active[class] {
+	background: url(/images/played_marker.png);
+}
 div.row-height, div.piece_image {
 	height: 31px;
 }

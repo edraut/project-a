@@ -13,15 +13,4 @@
 <% else %>
 	<div class="column span-3 first last nav-tab"><%= link_to '<span>Sign In</span>', login_path %></div>
 <% end %>
-<div class="column span-3 first last nav-tab"><% form_tag games_path, :method => :get, :id => 'play-form' do -%>
-	<a onclick="$(this).parents('form').submit();">Play Online Now</a>
-	<% end %>
- </div>
-<% javascript_tag do %>
-	jQuery.each(jQuery.browser, function(i, val) {
-		if(val == true && i == 'msie') {
-			$('#play-form').attr('action','/home');
-			alert('Please download Firefox or Safari to play.');
-		}
-	});
-<% end %>
+<div class="column span-3 first last nav-tab"><%= link_to '<span>Play Online Now</span>', games_path %></div>

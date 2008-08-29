@@ -81,6 +81,10 @@ class Game < ActiveRecord::Base
     frames.sort{|a,b| a.id <=> b.id}.last
   end
   
+  def latest_played_position
+    latest_frame.played_position
+  end
+  
   def penultimate_frame
     frames.sort{|a,b| a.id <=> b.id}[-2]
   end
